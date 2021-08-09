@@ -1,8 +1,13 @@
 /*
   m2aglabs_Ohmite.ino - Library for Ohmite FSP0(1/2/3)CE devices.
-  Created by Marc Graham, July 2019.
-  BSD License. 
-  Version 1.0.1 -- fix for non samd boards
+  Copyright (c) 2021 m2ag.labs (https://m2aglabs.com)
+  MIT License.
+
+  Version 1.0.1 -- fix for non SAMD boards
+  This file sets up a long and round sensor by default. To add a third you can uncomment 
+  the appropriate lines. 
+  SAMD boards may have more than 10 bits analog readresolution. Override the default 
+  by passing parameters in the begin() call.  
 */
 #include "m2aglabs_Ohmite.h"
 
@@ -27,7 +32,7 @@
 */
 
 M2aglabs_Ohmite roundSensor(A1, 28, 18, 19, 17);
-//M2aglabs_Ohmite sLinear(A2, 7, 6, 10, false);  //true means short
+//M2aglabs_Ohmite sLinear(A2, 7, 6, 10, true);  //true means short
 M2aglabs_Ohmite lLinear(A0, 22, 21, 20, false);  //false is long sensor 
 
 
@@ -36,12 +41,12 @@ void setup() {
 
 	Serial.begin(115200);
 	/*
-		The lib is set for a default of 10 for analog resolution and 3.3. for voltage. If the voltage is 5.0,
-		set it here. SAMD boards may haave 12 bits resolution. 
+		The lib is set for a default of 10 bits for analog resolution and 3.3. for voltage. If the voltage is 5.0,
+		set it here. SAMD boards may have more bits resolution. 
 	*/
 	//analogReadResolution(ANALOG_RESOLUTION);
 	roundSensor.begin();
-	// sLinear.begin(ANALOG_RESOLUTION);
+	//sLinear.begin();
 	lLinear.begin(); 
 
 	//Set options --
@@ -68,6 +73,8 @@ void linearSensorActions() {
 	float flp; //Force is a float
 
   /*
+    int spos
+	float fsp
 	fsp = sLinear.getForce(); 
 	
 	if (fsp > LINEAR_THRESHOLD) { 

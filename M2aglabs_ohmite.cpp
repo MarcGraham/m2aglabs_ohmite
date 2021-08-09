@@ -1,7 +1,7 @@
 /*
   m2aglabs_Ohmite.cpp - Library for Ohmite FSP0(1/2/3)CE devices.
-  Created by Marc Graham, July 2019.
-  BSD License. 
+  Copyright (c) 2021 m2ag.labs (https://m2aglabs.com)
+  MIT License
 */
 
 #include "M2aglabs_Ohmite.h"
