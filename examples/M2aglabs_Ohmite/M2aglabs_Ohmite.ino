@@ -9,7 +9,7 @@
   SAMD boards may have more than 10 bits analog readresolution. Override the default 
   by passing parameters in the begin() call.  
 */
-#include "m2aglabs_Ohmite.h"
+#include "M2aglabs_Ohmite.h"
 
 
 
