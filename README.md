@@ -1,6 +1,6 @@
 # An Arduino library for handling Force Sensing Potentiometers. This library will provide support for Ohmite FSP0(1/2/3)CE devices
 
-Usage info can be found [here](https://docs.google.com/document/d/17UxqkwVyKiHsx8oJJ3GsNGp3F33AtbwqxtHZd6n070k/edit?usp=sharing)
+Usage info can be found [here](https://m2aglabs.com/2021/09/15/using-ohmite-force-sensitive-potentiometers/)
 
 Ohmite [implementation guide](<https://www.mouser.com/pdfdocs/Ohmite-FSP-Integration-Guide-V1-0_27-03-18.pdf>)
 
